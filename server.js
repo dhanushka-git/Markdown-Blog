@@ -1,6 +1,9 @@
 const express = require("express");
+const mongoose = require('mongoose');
 const articleRoter = require("./routes/articles");
 const app = express();
+
+mongoose.connect('mongodb://localhost/blog', {useNewUrlParser: true, useUnifiedTopology: true});
 
 app.set('view engine', 'ejs');
 
@@ -20,7 +23,7 @@ app.get("/", (req, res)=>{
     }
 ]
 
-    res.render("index", {articles : articles});
+    res.render("articles/index", {articles : articles});
 });
 
 app.listen(5000);
