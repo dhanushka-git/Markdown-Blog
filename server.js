@@ -5,7 +5,9 @@ const articleRouter = require("./routes/articles");
 const methodOverride = require('method-override');
 const app = express();
 
-mongoose.connect('mongodb+srv://admin-shan:Test123@cluster0.shxyl.mongodb.net/markdownblog?retryWrites=true&w=majority', {useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex:true});
+mongoose.connect(
+  "mongodb+srv://admin-shan:Test123@cluster0.shxyl.mongodb.net/markdownblog?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true }
+);
 
 app.set('view engine', 'ejs');
 
@@ -24,6 +26,6 @@ app.get("/", async (req, res)=>{
 
 app.use("/articles", articleRouter);
 
-app.listen(process.env.PORT || 3000, function(){
+app.listen(process.env.PORT || 5000, function(){
   console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
 });

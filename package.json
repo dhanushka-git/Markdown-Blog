@@ -16,7 +16,7 @@
     "jsdom": "^16.4.0",
     "marked": "^2.0.1",
     "method-override": "^3.0.0",
-    "mongoose": "^5.11.18",
+    "mongoose": "^5.12.2",
     "slugify": "^1.4.7"
   }
 }
